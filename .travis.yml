@@ -1,0 +1,21 @@
+lenguges: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '16'
+git:
+  depth: 3
+script:
+  - yarn build
+deploy:
+  provider: pages #github pages va ser el encargado de hospedar esta pagina
+  skip-cleanup: true
+  kepp-history: true
+  github-token: $GITHUB_TOKEN
+  local-dir: dist/ #tiene que ser el mismo que esta en el webpack
+  target-branch: gh-pages #rama que nos dica la doc que nos dicta que es una rama que va publicar el sitio
+  commit_message: "Deploy del proyecto"
+  on:
+    branch: master #cuando detecte un cambio sobre master correra el script
