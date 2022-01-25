@@ -3,12 +3,17 @@ cache:
   directories:
     - node_modules
     - ~/.npm
-node_js:
+node_js: #version de node
   - '16'
 git:
   depth: 3
 script:
   - yarn build
+notifications: #envira una notificacion cuando haya un error o cuando haya un exito
+  email:
+    - victor-raul-22@hotmail.com
+  on_success: always
+  on_failure: always
 deploy:
   provider: pages #github pages va ser el encargado de hospedar esta pagina
   skip-cleanup: true
@@ -18,4 +23,4 @@ deploy:
   target-branch: gh-pages #rama que nos dica la doc que nos dicta que es una rama que va publicar el sitio
   commit_message: "Deploy del proyecto"
   on:
-    branch: master #cuando detecte un cambio sobre master correra el script
+    branch: master #cuando detecte un cambio sobre master correra el script realizado
