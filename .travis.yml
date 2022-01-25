@@ -10,6 +10,7 @@ git:
 script:
   - yarn build
 notifications: #envira una notificacion cuando haya un error o cuando haya un exito
+  slack: test1-3lw9093:1acUHBABNNkZ8x1K8gBK55p6 #Grupo de trabajo
   email:
     - victor-raul-22@hotmail.com
   on_success: always
